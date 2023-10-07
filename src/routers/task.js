@@ -16,11 +16,11 @@ router.post('/tasks',auth, async (req, res) => {
         res.status(400).send("Unable to insert data: " + error)
     }
 
-    // task.save().then((tasks)=>{
-    //     res.status(201).send(tasks)
-    // }).catch((e)=>{
-    //     res.status(400).send("Unable to insert data: "+e)
-    // })
+    task.save().then((tasks)=>{
+        res.status(201).send(tasks)
+    }).catch((e)=>{
+        res.status(400).send("Unable to insert data: "+e)
+    })
 })
 
 router.delete('/tasks/:id', auth,async (req, res) => {
